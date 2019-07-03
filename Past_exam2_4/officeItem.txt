@@ -1,0 +1,3 @@
+C1001	계산기	14000	Sharp
+C1002	샤프	1000	Monami
+C1003	지우개	500	Evergreen
