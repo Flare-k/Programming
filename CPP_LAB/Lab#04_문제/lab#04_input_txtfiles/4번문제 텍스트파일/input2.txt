@@ -1,0 +1,3 @@
+In this paper, we explore the feasibility of a
+medical training system for breast tumor palpation
+based on haptic augmented reality (AR) technology.

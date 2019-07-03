@@ -1,0 +1,9 @@
+In this paper, we explore the feasibility of a
+medical training system for breast tumor palpation based on haptic
+augmented reality (AR) technology. Haptic AR is an emerging
+research area in haptics and virtual reality
+(VR), which is concerned
+with augmenting the haptic
+properties of a real object by means of virtual haptic
+feedback. The AR-based tumor palpation system
+consists of a real breast sample.
