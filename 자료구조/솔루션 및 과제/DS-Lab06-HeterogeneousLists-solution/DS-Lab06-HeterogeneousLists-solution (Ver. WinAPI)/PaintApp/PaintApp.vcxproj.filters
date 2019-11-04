@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="01.Main">
+      <UniqueIdentifier>{31ef5c75-144c-4535-bdaf-96ce79d3f078}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Common">
+      <UniqueIdentifier>{31a8c569-084d-4349-9e08-b934f737e619}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Common\Manager">
+      <UniqueIdentifier>{94784a5c-f927-4fde-b09e-bf61b403dee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Main\STL">
+      <UniqueIdentifier>{2541f950-ff06-4987-8cb1-cea59c5f7bae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Main\PolygonClass">
+      <UniqueIdentifier>{b65ee543-8a72-49e0-9bf8-70555480d88b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00.WinAPI">
+      <UniqueIdentifier>{4e4865ab-dcb6-4d9f-95f5-59ed03a86ad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Else">
+      <UniqueIdentifier>{069d8ce0-fd32-48e2-aec3-39dfe4dfe9d8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KeyManager.h">
+      <Filter>02.Common\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SingletonBase.h">
+      <Filter>02.Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>01.Main</Filter>
+    </ClInclude>
+    <ClInclude Include="HeterogeneousList.h">
+      <Filter>01.Main\STL</Filter>
+    </ClInclude>
+    <ClInclude Include="HtgListIterator.h">
+      <Filter>01.Main\STL</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseNode.h">
+      <Filter>01.Main\PolygonClass</Filter>
+    </ClInclude>
+    <ClInclude Include="MyUtil.h">
+      <Filter>02.Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleNode.h">
+      <Filter>01.Main\PolygonClass</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonNode.h">
+      <Filter>01.Main\PolygonClass</Filter>
+    </ClInclude>
+    <ClInclude Include="RectangleNode.h">
+      <Filter>01.Main\PolygonClass</Filter>
+    </ClInclude>
+    <ClInclude Include="AppBase.h">
+      <Filter>00.WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>00.WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>03.Else</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>03.Else</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintApp.h">
+      <Filter>03.Else</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>02.Common\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>01.Main</Filter>
+    </ClCompile>
+    <ClCompile Include="HeterogeneousList.cpp">
+      <Filter>01.Main\STL</Filter>
+    </ClCompile>
+    <ClCompile Include="HtgListIterator.cpp">
+      <Filter>01.Main\STL</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseNode.cpp">
+      <Filter>01.Main\PolygonClass</Filter>
+    </ClCompile>
+    <ClCompile Include="MyUtil.cpp">
+      <Filter>02.Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleNode.cpp">
+      <Filter>01.Main\PolygonClass</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonNode.cpp">
+      <Filter>01.Main\PolygonClass</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangleNode.cpp">
+      <Filter>01.Main\PolygonClass</Filter>
+    </ClCompile>
+    <ClCompile Include="AppBase.cpp">
+      <Filter>00.WinAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>03.Else</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintApp.cpp">
+      <Filter>00.WinAPI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PaintApp.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="PaintApp.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

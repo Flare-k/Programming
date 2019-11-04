@@ -1,0 +1,20 @@
+﻿빌드 시작: 2013-04-23 오전 11:29:06
+     1>2 노드의 "C:\Users\HanSangyun\Documents\DaumCloud\대학자료\2학년 1학기\자료구조\프로젝트\음악 관리 프로그램(배열)\DS_project01(배열리스트)\DS_project01\DS_project01.vcxproj" 프로젝트(build 대상)입니다.
+     1>InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\DS_project01.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         모든 출력이 최신 상태입니다.
+       ManifestResourceCompile:
+         모든 출력이 최신 상태입니다.
+       Link:
+         모든 출력이 최신 상태입니다.
+       Manifest:
+         모든 출력이 최신 상태입니다.
+       FinalizeBuildStatus:
+         "Debug\DS_project01.unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "Debug\DS_project01.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"C:\Users\HanSangyun\Documents\DaumCloud\대학자료\2학년 1학기\자료구조\프로젝트\음악 관리 프로그램(배열)\DS_project01(배열리스트)\DS_project01\DS_project01.vcxproj" 프로젝트를 빌드했습니다(build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:00.06
