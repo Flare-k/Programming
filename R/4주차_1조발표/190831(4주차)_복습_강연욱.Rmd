@@ -1,0 +1,66 @@
+---
+title: "190831(4주차)_복습_강연욱"
+author: "강연욱"
+date: "9/2/2019"
+output: html_document
+---
+
+## Q.1 diamonds 데이터에서 깨끗한 수준(=clarity)이 ‘SI2’이고, 가격이 400이하인 데이터를 추출하세요.
+```{r}
+library("dplyr")
+library("ggplot2")
+#dplyr & ggplot2 패키지 불러오기.
+diamonds   #diamonds 데이터 호출
+diamonds <- as.data.frame(ggplot2::diamonds)
+str(diamonds)
+diamonds %>% filter(clarity == 'SI2' & price <= 400) %>% 
+  head()
+```
+> 너무 길어서 상위 6개만 출력하였습니다.
+
+## Q.2 diamonds 데이터에서 'a' 문자열을 포함하는 열을 추출하세요.
+```{r}
+diamonds %>% select(contains("a")) %>% 
+  head()
+```
+> 너무 길어서 상위 6개만 출력하였습니다.
+
+## Q.3 cut의 가치별로 가격의 평균(mean_price)을 구해 내림차순으로 1~3위를 출력하세요.
+```{r}
+diamonds %>% group_by(cut) %>%   #cut을 범주화 함
+  summarise(mean_price = mean(price)) %>% 
+  arrange(desc(mean_price)) %>% 
+  head(3)
+```
+
+## Q.4 아래와 같은 데이터 프레임 'bitamin'을 만들어보세요.
+```{r}
+bitamin <- data.frame(sex = c('F', 'F', 'M', 'F', 'M', 'M', 'F', 'F', 'M', 'M'),
+                      test = c(65, 70, 77, 82, 97, 86, 55, 99, 67, 85))
+bitamin
+```
+
+## Q.5 위에서 만든 ‘bitamin’에서 ‘grade’ 변수를 추가하고, test가 65점 미만이면 ‘F’, 65점 이상 75점 미만이면 ‘C’, 75점 이상 85점 미만이면 ‘B’, 85점 이상이면 ‘A’를 부여한 후, ‘bitamin_a’ 객체에 저장하세요.
+
+```{r}
+bitamin_a <- bitamin %>%  mutate(grade = ifelse(bitamin$test < 65 , 'F', 
+                                   ifelse(bitamin$test >= 65 & bitamin$test < 75, 'C',
+                                          ifelse(bitamin$test >= 75 & bitamin$test < 85, 'B', 'A')) ))
+bitamin_a
+```
+
+## Q.6 성별에 따른 test 점수의 평균과 표준편차, 인원 수를 구하세요.
+```{r}
+bitamin_a %>% group_by(sex) %>% 
+  summarise(mean(test), sd(test), n())
+```
+
+## Q.7  'bitamin_b' 라는 데이터 프레임을 생성한 후, ‘bitamin’을 이용해서 아래와 같은 데이터를 추출해보세요.(hint : arrange함수)
+```{r}
+bitamin_b <- data.frame(sex = c('F', 'M'),
+                        code =c(1,2))   #bitamin_b 데이터프레임 생성
+bitamin_b    #bitamin_b 내용 확인
+bitamin_full <- full_join(bitamin, bitamin_b, by = 'sex') #bitamin과 bitamin_b를 full_join해줌
+bitamin_full %>% 
+  arrange(code, desc(test))   #code에 대해선 오름차순, test에 대해서는 내림차순으로 정리
+```

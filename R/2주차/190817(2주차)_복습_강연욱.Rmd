@@ -1,0 +1,56 @@
+---
+title: "190817(2주차)_복습_강연욱"
+author: "강연욱"
+date: "8/21/2019"
+output: html_document
+---
+
+
+# 1. 내장 데이터 airquality의 상위 10개의 데이터만 추출하시오.
+```{r}
+head(airquality, 10)
+```
+
+# 2. airquality는 달별로 몇 개의 데이터가 있는지 보이시오.
+
+```{r}
+table(airquality$Month)
+
+```
+
+# 3. airquality의 데이터 구조를 파악하고 결측치가 있는지 확인하시오. 만약에 결측치가 있다면 결측치의 개수를 적고, 제거하여 air_qual 이라는 새로운 데이터를 생성하시오.
+```{r}
+str(airquality)
+```
+>airquality의 구조
+
+```{r}
+sum(is.na(airquality))
+```
+> 결측치 44개
+
+```{r}
+air_qual <- na.omit(airquality)
+sum(is.na(air_qual))
+```
+
+# 4. air_qual의 5, 6월 ozone의 평균,중앙값을 리스트 형식으로 보이시오.(subset 함수 이용)
+```{r}
+may <- c(subset(air_qual, Month == 5, 1))
+june <- c(subset(air_qual, Month == 6, 1))
+mean_may_june <- list("5월평균"=mean(may[[1]]), "6월평균"=mean(june[[1]]))
+median_may_june <- list("5월중앙값"=median(may[[1]]), "6월중앙값"=median(june[[1]]))
+
+mean_may_june;median_may_june
+```
+
+# 5. air_qual의 달별 평균을 구하시오.
+```{r}
+aggregate(Ozone~Month, air_qual, mean)
+```
+
+# 6. 달과 일이 같이 있는 date변수를 새로 만들고, 가장 온도가 높은 날짜를 구하시오.
+```{r}
+air_qual$date <- paste(air_qual$Month,air_qual$Day,sep="-")
+head(air_qual$date)
+```

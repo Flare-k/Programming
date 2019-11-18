@@ -1,0 +1,149 @@
+storeA <- c(15,25,70,100)
+mean(storeA)
+
+J <- c(1,1,100,100)
+H <- c(30,40,40,50)
+mean(J); mean(H)
+
+storeB <- c(10,20,50,70,100)
+median(storeA)
+median(storeB)
+
+nums <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17)
+
+#nums의 사분위수 산출
+quantile(nums)
+
+#상자그림
+boxNums <- c(21,22,23,24,25)
+#사분위수 확인
+quantile(boxNums)
+#상자그림 그리기
+boxplot(boxNums)
+
+boxNums_1 <- c(16,21,22,23,24,25,30)
+
+quantile(boxNums_1)
+
+boxplot(boxNums_1)
+#이상치 = (3사분위수 - 1사분위수)*1.5
+storeB
+boxplot(storeB)
+storeB <- storeB[storeB < 600]
+boxplot(storeB)
+
+
+storeA <- NULL
+storeA <- c(20,21,23,22,26,28,35,35,41,42,43,45,44,45,46,47,47,46,47,58,58,59,60,56,67,67,80)
+
+storeB <- NULL
+storeB <- c(5,6,11,16,15,16,20,20,21,23,22,27,27,30,30,32,36,37,37,40,40,43,44,45,51,54,70, 600)
+
+boxplot(storeA, storeB, names = c("A식당", "B식당"))
+# -> A보다 B가 더 빠르다.  
+points(c(mean(storeA), mean(storeB)), pch=2, col="red", cex=2)  
+  
+points(c(mean(storeA), mean(storeB)), pch=1, col=1, cex=3)
+
+boxplot(storeA, storeB, names = c("A식당", "B식당"))
+points(c(mean(storeA), mean(storeB)), pch=1, col=1, cex=3)
+
+storeB <- NULL
+storeB <- c(5,6,11,13,15,16,20,20,21,23,22,27,27,30,30,32,36,37,37,40,40,43,44,45,51,54,70)
+mean(storeB)
+quantile(storeB)
+
+storeC <- c(5,5,5,12,10,11,20,20,20,20,20,21,20,30,32,31,31,31,36,40,40,51,61,51,61,61,70)
+mean(storeC)  
+quantile(storeC)  
+
+boxplot(storeB, storeC, names=c("B식당", "C식당"))  
+
+bpdat <- c(1,50,50,50,100,100,100,150)
+boxplot(bpdat)
+
+boxNums <- c(16,21,22,23,24,25,30)
+boxplot(boxNums)
+
+boxplot(boxNums, range=2)
+
+iris
+#boxplot(x~y) = y그룹별로 x의 상자그림 그리기
+boxplot(iris$Sepal.Length~iris$Species)
+
+nums
+a <- hist(nums, main='숫자의분포', xlab='숫자', ylab='분포')
+a
+hist(nums,4)
+hist(nums,6)
+hist(nums, breaks = c(0,2,9,15,17)) #구간 직접 설정
+
+boxplot(storeB)$stats
+#데이터의 최솟값, 사분위수, 상자그림을 한 번에 보여줌
+
+
+var(storeB)
+var(storeC)
+
+
+#표준편차, 평균으로부터 떨어진 정도
+sd(storeB)
+sd(storeC)
+
+bloodType <- c('A', 'B', 'A', 'AB', "O", 'A', 'O','B','A','O',
+               'O','B','O','A','AB','B','O','A','A','B')
+length(bloodType)
+table(bloodType)
+model_table <- table(bloodType)
+#prop.table()을 통하여 비율을 계산할 수 있다.
+prop.table(model_table)
+
+table_bloodType <- table(bloodType)
+table_bloodType
+names(table_bloodType)
+sum(table_bloodType)
+
+addmargins(table(bloodType))
+
+pie(x=table(bloodType))
+
+pie(x=table(bloodType)
+    ,labels = c("A", "AB", "B","O")
+    ,col=c("chocolate1", "chartreuse2", "darkgoldenrod1", "darkorchid1")
+    ,lty=2
+    ,main="이슬반 혈액형 분포")
+
+colors()
+
+pie(x=table(bloodType), col=rainbow(4))
+
+barplot(table(bloodType))
+
+barplot(table(bloodType),
+        names.arg = c("A형", "AB형", "B형", "O형"),
+        main = "현우반의 혈액형 분포",
+        xlab = "혈액형",
+        ylab = "학생수",
+        col=heat.colors(4))
+
+classDF <- data.frame(name = c('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'),
+                      gender = c('M', 'M', 'F','M','M','F','F','M','M','F','M','F','M','M','F','F','M','M','M','F'),
+                      bloodType = c('A','B','A','AB','O','A','O','B','A','O','O','B','O','A','AB','B','O','A','A','B'))
+str(classDF)
+head(classDF[,c(2,3)])
+table(classDF[,c(2,3)])
+
+addmargins(table(classDF[,c(2,3)]))
+
+classTable <- table(classDF[,c(2,3)])
+barplot(classTable)
+barplot(classTable, legend=T)
+barplot(classTable, legend=T, ylim=c(0,8))
+barplot(classTable, legend=T, ylim=c(0,8),
+        col=c("skyblue", "lightpink"))
+barplot(classTable, legend=T, ylim=c(0,8),
+        col=c("skyblue", "lightpink"),
+        beside = T)
+
+
+

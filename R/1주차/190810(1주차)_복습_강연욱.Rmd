@@ -1,0 +1,59 @@
+---
+title: "1주차 과제"
+author: "강연욱"
+date: "8/12/2019"
+output: html_document
+---
+# 1번
+> -10으로 시작해 10으로 끝나는 길이가 30인 등차수열을 만들고, 이 값들이 3번 반복되는 길이가 90인 벡터를 my_vector라는 이름으로 만드세요.
+```{r}
+my_vector <- seq(-10, 10, length.out = 30)
+my_vector <- rep(my_vector, 3) ; my_vector
+```
+# 2번
+> my_vector값 중 0 이상 10이하인 것들을 “positive”로 바꾸세요.(hint : &)
+
+```{r}
+which(!my_vector<0)
+
+my_vector[16:30] <- "positive"
+my_vector[46:60] <- "positive"
+my_vector[76:90] <- "positive"
+my_vector
+```
+
+
+# 3번
+>my_vector+10 을 실행하고 만약 값이 바뀌지 않는다면 그 이유에 대해 생각해보세요.
+
+```{r}
+#my_vector + 10
+```
+>my_vector는 "positive"부분에서 이미 요소들이 문자로 바뀌게 되었다. 고로 문자+숫자형 데이터는 불가능 하므로 값이 바뀌지 않게 된다.
+
+# 4번
+>“positive” 가 아닌 값들을 추출하여 새로운 벡터 tmp_vector에 저장하고 10을 더하세요. (hint: which)
+
+```{r}
+which(my_vector != "positive")
+
+tmp_vector <- my_vector[1:15]
+tmp_vector[16:30] <- my_vector[31:45]
+tmp_vector[31:45] <- my_vector[61:75]
+tmp_vector
+as.numeric(tmp_vector)+10
+
+```
+
+# 5번
+>당첨이 3개 꽝이 7개 있는 뽑기가 있습니다. 1개씩 5번을 뽑을 때 당첨될 확률은 얼마인가요? (확률은 당첨이 나온 개수/뽑은 개수). 아래의 결과는 예시 입니다.
+
+```{r}
+set.seed(0529)
+pick <- sample(c("꽝","꽝","꽝","꽝","꽝","꽝","꽝", "당첨", "당첨", "당첨"), 1) ; pick
+pick <- sample(c("꽝","꽝","꽝","꽝","꽝","꽝","꽝", "당첨", "당첨", "당첨"), 1) ; pick
+pick <- sample(c("꽝","꽝","꽝","꽝","꽝","꽝","꽝", "당첨", "당첨", "당첨"), 1) ; pick
+pick <- sample(c("꽝","꽝","꽝","꽝","꽝","꽝","꽝", "당첨", "당첨", "당첨"), 1) ; pick
+pick <- sample(c("꽝","꽝","꽝","꽝","꽝","꽝","꽝", "당첨", "당첨", "당첨"), 1) ; pick
+```
+> 1/5 = 0.2, 0.2의 확률로 당첨된다.

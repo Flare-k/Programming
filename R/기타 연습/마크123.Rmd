@@ -1,0 +1,25 @@
+---
+title: "마크다운 연습"
+author: "강연욱"
+date: "8/10/2019"
+output: html_document
+---
+# Markdown Sampling
+## Markdown Sampling
+### Markdown Sampling
+#### Markdown Sampling
+##### Markdown Sampling
+###### Markdown Sampling
+
+
+```{r}
+set.seed(0921)
+coin <- sample(c("앞","뒤"),100,replace = T);table(coin)
+coin <- sample(c("앞","뒤"),100,replace = T);table(coin)
+coin <- sample(c("앞","뒤"),100,replace = T);table(coin)
+coin <- sample(c("앞","뒤"),100,replace = T);table(coin)
+```
+
+> *샘플링 함수*
+
+>>**샘플링 함수**

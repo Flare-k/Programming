@@ -1,0 +1,80 @@
+---
+title: "190824(3주차)_복습_강연욱"
+author: "강연욱"
+date: "8/28/2019"
+output: html_document
+---
+
+# 1. 1단~9단까지 구구단을 2차원 행렬 구조로 작성하세요
+```{r}
+ls()
+rm(list = ls())   #시작하기 전에 사용했던 객체들을 모두 제거해준다.
+
+exam <- c()
+for(i in 1:9){
+        for(j in 1:9){
+          result = i * j
+         exam<-c(exam,print (paste(i,"x",j,"=",result)))
+        }
+  }        #이중 반복문을 이용하여 구구단을 구현하고 컨테이너에 할당해준다.
+exam
+
+gugu <- matrix(exam, nrow = 9, ncol=9)   #베터를 행렬의 형태로 만들어준다.
+gugu
+```
+
+# 2. airquality 데이터에 Ozone변수에 있는 결측치를 for문을 이용하여 Ozone의 평균값으로 대체하세요. 결측치가 없어졌는지 확인하세요.
+```{r}
+table(is.na(airquality$Ozone))
+airmean = sum(airquality$Ozone, na.rm = T)/length(airquality$Ozone)
+airmean
+
+for(i in 1:length(airquality$Ozone)){
+  if(is.na(airquality$Ozone[i])){    
+    airquality$Ozone[i] <- airmean   
+  }   #만약 NA가 있으면 TRUE이므로 해당 인덱스 값에 평균 값을 할당해준다.
+  else{
+    next    #NA가 아니면 그냥 넘어간다.
+  }
+}
+airquality$Ozone
+table(is.na(airquality$Ozone))
+
+```
+>결측치가 없어졌음을 알 수 있다. 
+
+# 3. 화씨를 섭씨로 바꾸고 체감기온을 계산하는 함수 feel_temp를 정의하세요.
+```{r}
+data(airquality)    #앞서 airquality를 사용하였기에 초기화 해준다.
+airquality$Temp     #화씨 기준
+
+feel_temp <- function(fah){   #feel_temp라는 함수를 만들어준다. fah = 화씨
+  celsius <- NULL     #'섭씨'를 넣어줄 객체 초기화
+  temp <- NULL       #임의의 '온도' 객체 초기화
+  for(i in 1:length(fah)){  #airquality$Temp를 fah라는 입력파라미터로 불러온다.
+    celsius[i] <- (fah[i]-32)/(1.8) #섭씨온도 계산
+    temp[i] <- celsius[i]
+  }
+
+  phytemp <- NULL    #체감기온에 대한 객체 초기화
+  for(i in 1:length(temp)){
+    phytemp[i] <- (13.12 + 0.6215*temp[i] - 11.37*(airquality$Wind[i])^0.16 + 0.3965*(airquality$Wind[i])^(0.16)*temp[i])
+  }
+  return(phytemp)
+}
+
+feel_temp(airquality$Temp)  #함수 호출
+```
+
+# 4. 3번에서 정의한 함수를 이용하여 airquality 데이터에 feeling_temp라는 변수를 추가하여 바탕화면에 my_exam.csv라는 이름으로 저장하고 my_airquality라는 객체에 다시 불러와보세요.
+```{r}
+airquality$feeling_temp <- feel_temp(airquality$Temp)
+
+getwd()
+setwd("/Users/noblyan/Desktop")
+getwd()
+
+write.csv(airquality, "my_exam.csv", row.names = F)
+my_airquality <- read.csv("/Users/noblyan/Desktop/my_exam.csv")
+my_airquality
+```
