@@ -1,0 +1,16 @@
+음원관리프로그램 시스템 메뉴얼
+
+1. 기본적으로 기존 lab의 시스템과 메뉴를 따른다.
+
+2. data.txt 에 기본적인 data가 저장되어 있다.(ID: 1~17)
+
+3. 메뉴 18번: 검색 기록을 보여준다.
+	- 검색 기록은 메뉴 3(Search item by ID(Sequential Search)), 
+	메뉴 4(Search item by ID(Binary Search))로 검색할 때 추가된다.
+
+4. 메뉴 19번: 음악을 추천해 준다.
+	- 음악 추천은 Play List에 가장 많이 있는 Genre의 노래를 Master List에서
+	검색해서 출력한다. 따라서 Play List에 곡을 먼저 넣은 후 실행한다.
+
+5. 캐시: 검색 기록인 Recent Search List는 검색 시 캐시로 동작해 먼저 검색한 후 없을 경우
+	Master List에서 검색한다.
